@@ -1,0 +1,59 @@
+<div id="outer">
+    <div id="inner_one">
+        <p>Hello </p>
+    </div>
+    <div id="inner_two">
+        <p>Css</p>
+    </div>
+</div>
+<div id="bd">Test Border</div
+
+
+/*-------------------------------------------*/
+#outer {
+    width: 300px;
+    /* height: 300px; */            /* I 情况*/
+    overflow: auto;
+    background: #787878;
+}
+#inner_one {
+    width: 100px;
+    height: 400px;
+    background: pink;
+    float: left;
+}
+#inner_two {
+    width: 100px;
+    background: orange;
+    float: left;
+}
+#bd {                            /* II 情况 */
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
+/*--------------------------------------------*/
+/*
+ *    浮动
+ *
+ *    在标准流中，在没有指定宽高的情况下，元素的宽高由内容填充的大小决定。
+ *    
+ *    I. 某个元素的 所有直接子节点 都设置为浮动时(非标准流)，在没有指定宽高的条件下，
+ *    其大小是为零的,在页面上看不到任何视觉效果。
+ *    即：
+ *    #outer {}
+ *    #outer> * { float: left; }
+ *
+ *    II. 在标准流中，某个元素的子节点高度 大于 父节点的高度时，默认情况下溢出，
+ *    但会被与 父节点同级的节点所 覆盖( 层次上该子节点在与父节点同级的节点的下方 )
+ *
+ *    III. 当某个元素的 子节点为浮动，并且溢出父节点时，并不会被与父节点同级的节
+ *    点所覆盖
+ *
+ *    IIII. 在情况I中，其父节点并没有把所有子节点包含在其节点下面，为了像标准流一样
+ *    能自动扩展自身大小去包含子节点，必须使用一个 overflow属性。
+ *    应用了overflow(auto或hidden)的元素，将会扩展到它需要的大小以包围
+ *    它里面的浮动的子元素。
+ *    (http:http://www.qianduan.net/css-overflow-property.html)
+ */
